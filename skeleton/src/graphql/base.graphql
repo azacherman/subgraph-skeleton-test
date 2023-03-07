@@ -1,0 +1,22 @@
+type Query {
+    deviceByIMEI(input: IMEIInput): IMEIOutput
+    hello: String
+}
+
+input IMEIInput {
+    imeiNumber: String!
+    deviceBrand: String!
+    financeLock: String!
+    reCaptcha: String
+}
+
+type IMEIOutput {
+    device: Device
+}
+
+type Device {
+    manufacturer: String!
+    model: String!
+    capacity: String!
+    carrier: String!
+}
